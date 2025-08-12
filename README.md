@@ -290,31 +290,6 @@ El backend está configurado para permitir peticiones desde:
 - `https://*.netlify.app` (cualquier subdominio de Netlify)
 - `https://*.vercel.app` (cualquier subdominio de Vercel)
 
-### **Monitoreo y Logs**
-
-- **Backend**: Logs disponibles en el dashboard de Render
-- **Frontend**: Logs de build disponibles en Netlify
-- **Health Check**: Endpoint `/health` para verificar estado del backend
-
-## 🔮 Mejoras Futuras
-
-### **Funcionalidades Adicionales**
-- 📅 **Calendario visual** con vista de disponibilidad
-- 🔔 **Notificaciones** de cambios y conflictos
-- 📊 **Reportes** de uso y ocupación
-- 🔐 **Sistema de autenticación** y autorización
-- 📱 **Aplicación móvil** nativa
-
-### **Optimizaciones Técnicas**
-- ⚡ **Caché** de consultas frecuentes
-- 🗄️ **Base de datos** más robusta (PostgreSQL/MySQL)
-- 🔄 **WebSockets** para actualizaciones en tiempo real
-- 📈 **Métricas** y monitoreo de rendimiento
-
-## 📝 Licencia
-
-Este proyecto fue desarrollado como parte de la prueba técnica para Nolab.
-
 ---
 
 **Desarrollado con ❤️ por Sergio Perez Bautista**

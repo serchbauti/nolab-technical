@@ -3,10 +3,16 @@ export type HttpError = {
     body?: any;
   };
   
-  const API = import.meta.env.VITE_API_URL ?? 'http://localhost:8080';
+  // Configuración de la API según el entorno
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+  
+  export const API_ENDPOINTS = {
+    reservations: `${API_BASE_URL}/reservations`,
+    nextAvailable: `${API_BASE_URL}/next-available`,
+  } as const;
   
   async function request<T>(path: string, init?: RequestInit): Promise<T> {
-    const res = await fetch(`${API}${path}`, {
+    const res = await fetch(`${API_BASE_URL}${path}`, {
       headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
       ...init,
     });

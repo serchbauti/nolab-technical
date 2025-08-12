@@ -1,6 +1,6 @@
 import app from '@/app.ts';
-import { env } from '@/config.ts';
+import { config } from '@/config.ts';
 
-app.listen(env.PORT, () => {
-  console.log(`API listening on http://localhost:${env.PORT}`);
+app.listen(config.port, () => {
+  console.log(`API listening on http://localhost:${config.port}`);
 });

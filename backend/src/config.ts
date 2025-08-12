@@ -1,12 +1,19 @@
-import 'dotenv/config';
 import { z } from 'zod';
 
-const EnvSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+const envSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   PORT: z.coerce.number().default(8080),
-  DATABASE_URL: z.string().min(1),
+  DATABASE_URL: z.string().optional(),
   CORS_ORIGIN: z.string().default('*'),
-  LOG_LEVEL: z.string().default('dev')
 });
 
-export const env = EnvSchema.parse(process.env);
+const env = envSchema.parse(process.env);
+
+export const config = {
+  nodeEnv: env.NODE_ENV,
+  port: env.PORT,
+  databaseUrl: env.DATABASE_URL,
+  corsOrigin: env.CORS_ORIGIN,
+  isProduction: env.NODE_ENV === 'production',
+  isDevelopment: env.NODE_ENV === 'development',
+};

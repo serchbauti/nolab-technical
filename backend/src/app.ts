@@ -1,16 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { env } from '@/config.ts';
+import { config } from '@/config.ts';
 import reservationsRouter from '@/routes/reservations.ts';
 import { errorHandler } from '@/middlewares/error.ts';
 import { notFound } from '@/middlewares/notFound.ts';
 
 const app = express();
 
-app.use(cors({ origin: env.CORS_ORIGIN, credentials: false }));
+app.use(cors({ origin: config.corsOrigin, credentials: false }));
 app.use(express.json({ limit: '100kb' }));
-app.use(morgan(env.LOG_LEVEL));
+app.use(morgan(config.isProduction ? 'combined' : 'dev'));
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
 

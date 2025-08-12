@@ -1,0 +1,14 @@
+# Archivos de desarrollo
+src/
+public/
+node_modules/
+.env*
+*.log
+
+# Archivos de configuración
+tsconfig.json
+vite.config.ts
+package-lock.json
+
+# Solo incluir el directorio dist
+!dist/

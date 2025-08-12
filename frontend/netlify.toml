@@ -1,6 +1,14 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm install && npm run build"
+
+[context.production]
+  publish = "dist"
+  command = "npm install && npm run build"
+
+[context.deploy-preview]
+  publish = "dist"
+  command = "npm install && npm run build"
 
 [build.environment]
   VITE_API_URL = "https://nolab-technical.onrender.com"

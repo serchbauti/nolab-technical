@@ -287,8 +287,6 @@ VITE_APP_VERSION=1.0.0
 El backend está configurado para permitir peticiones desde:
 - `http://localhost:3000` (desarrollo local)
 - `https://nolab-technical.onrender.com` (backend)
-- `https://*.netlify.app` (cualquier subdominio de Netlify)
-- `https://*.vercel.app` (cualquier subdominio de Vercel)
 
 ---
 

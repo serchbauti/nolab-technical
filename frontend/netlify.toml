@@ -5,22 +5,11 @@
 [build.environment]
   VITE_API_URL = "https://nolab-technical.onrender.com"
 
-# Redirects para SPA
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/reservations"
-  to = "/index.html"
-  status = 200
-
+# Redirects para SPA - Solución más directa
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
 
 [[headers]]
   for = "/*"

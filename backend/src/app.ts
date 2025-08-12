@@ -8,7 +8,7 @@ import { notFound } from '@/middlewares/notFound';
 
 const app = express();
 
-// Configuración de CORS para permitir múltiples orígenes
+// Configuración de CORS para permitir múltiples orígenes - V2
 const allowedOrigins = [
   'http://localhost:3000', // Desarrollo local
   'https://nolab-technical.onrender.com', // Backend

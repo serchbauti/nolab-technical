@@ -1,12 +1,11 @@
 import Database from 'better-sqlite3';
-import { env } from '@/config.js';
-import { bootstrap } from './bootstrap.js';
+import { config } from '@/config';
+import { bootstrap } from './bootstrap';
 
-const db = new Database(env.DATABASE_URL, { fileMustExist: false });
+const db: any = new Database(config.databaseUrl || 'data/app.db', { fileMustExist: false });
 db.pragma('journal_mode = WAL');
 db.pragma('synchronous = NORMAL');
 
 bootstrap(db);
 
-export type DB = Database.Database;
 export default db;

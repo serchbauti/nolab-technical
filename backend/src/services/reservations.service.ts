@@ -1,6 +1,6 @@
-import db from '@/db/client.js';
+import db from '@/db/client';
 import { v4 as uuid } from 'uuid';
-import { BadRequestError, ConflictError } from '@/domain/errors.js';
+import { BadRequestError, ConflictError } from '@/domain/errors';
 import {
   durationMinutes,
   durationValid,
@@ -8,8 +8,8 @@ import {
   withinBusinessWindowUTC,
   TZ,
   MIN_MINUTES
-} from '@/domain/time.js';
-import { nextAvailable, getConflicts } from './availability.service.js';
+} from '@/domain/time';
+import { nextAvailable, getConflicts } from './availability.service';
 
 type CreateInput = {
   startTime: string;

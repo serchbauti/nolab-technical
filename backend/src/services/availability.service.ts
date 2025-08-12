@@ -1,5 +1,5 @@
-import db from '@/db/client.js';
-import { alignToBusinessWindow, overlaps, stepForward, withinBusinessWindowUTC } from '@/domain/time.js';
+import db from '@/db/client';
+import { alignToBusinessWindow, overlaps, stepForward, withinBusinessWindowUTC } from '@/domain/time';
 
 export function hasOverlap(startUtc: number, endUtc: number): boolean {
   const row = db.prepare(`

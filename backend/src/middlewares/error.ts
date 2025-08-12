@@ -1,6 +1,6 @@
 import type { ErrorRequestHandler } from 'express';
 import { ZodError } from 'zod';
-import { BadRequestError, ConflictError } from '@/domain/errors.ts';
+import { BadRequestError, ConflictError } from '@/domain/errors';
 
 export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   if (err instanceof ZodError) {

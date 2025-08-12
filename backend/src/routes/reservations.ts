@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { CreateReservationSchema } from '@/validators/reservation.dto.js';
-import { createReservation, listReservations } from '@/services/reservations.service.js';
-import { ConflictError } from '@/domain/errors.js';
-import { fromUTC, toUTC, TZ } from '@/domain/time.js';
-import { nextAvailable } from '@/services/availability.service.js';
+import { CreateReservationSchema } from '@/validators/reservation.dto';
+import { createReservation, listReservations } from '@/services/reservations.service';
+import { ConflictError } from '@/domain/errors';
+import { fromUTC, toUTC, TZ } from '@/domain/time';
+import { nextAvailable } from '@/services/availability.service';
 import { z } from 'zod';
 
 const router = Router();
@@ -26,12 +26,12 @@ router.post('/reservations', async (req, res, next) => {
     const dto = CreateReservationSchema.parse(req.body);
     const created = await createReservation(dto);
     res.status(201).json({
-      id: created.id,
-      startTime: fromUTC(created.start_time_utc, created.timezone),
-      endTime:   fromUTC(created.end_time_utc,   created.timezone),
-      priority: created.priority,
-      resources: { projector: !!created.projector, capacity: created.capacity },
-      timezone: created.timezone
+      id: (created as any).id,
+      startTime: fromUTC((created as any).start_time_utc, (created as any).timezone),
+      endTime:   fromUTC((created as any).end_time_utc,   (created as any).timezone),
+      priority: (created as any).priority,
+      resources: { projector: !!(created as any).projector, capacity: (created as any).capacity },
+      timezone: (created as any).timezone
     });
   } catch (err) {
     if (err instanceof ConflictError) {

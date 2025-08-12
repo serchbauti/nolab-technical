@@ -25,7 +25,7 @@ export function fromUTCString(isoUTC: string): number {
 export function fromUTC(epochSec: number, zone: TZ): string {
   const dt = DateTime.fromSeconds(epochSec, { zone: 'utc' });
   if (!dt.isValid) throw new Error(`Invalid DateTime from epochSec: ${epochSec}`);
-  return dt.setZone(zone).toISO({ suppressSeconds: true, suppressMilliseconds: true });
+  return dt.setZone(zone).toISO({ suppressSeconds: true, suppressMilliseconds: true }) || '';
 }
 
 export function isBusinessDayUTC(epochSec: number): boolean {

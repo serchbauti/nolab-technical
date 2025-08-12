@@ -1,6 +1,6 @@
-import type { DB } from 'better-sqlite3';
+import type { Database } from 'better-sqlite3';
 
-export function bootstrap(db: DB) {
+export function bootstrap(db: Database) {
   db.exec(`
     CREATE TABLE IF NOT EXISTS reservations (
       id TEXT PRIMARY KEY,

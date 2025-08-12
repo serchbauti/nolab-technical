@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import { config } from '@/config.ts';
-import reservationsRouter from '@/routes/reservations.ts';
-import { errorHandler } from '@/middlewares/error.ts';
-import { notFound } from '@/middlewares/notFound.ts';
+import { config } from '@/config';
+import reservationsRouter from '@/routes/reservations';
+import { errorHandler } from '@/middlewares/error';
+import { notFound } from '@/middlewares/notFound';
 
 const app = express();
 

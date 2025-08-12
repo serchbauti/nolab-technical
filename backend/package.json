@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx --require tsconfig-paths/register src/server.ts",
-    "build": "tsc",
+    "build": "tsc && node scripts/fix-paths.js",
     "start": "./start.sh",
     "start:low-memory": "node --max-old-space-size=256 dist/server-prod.js",
     "postinstall": "npm run build",

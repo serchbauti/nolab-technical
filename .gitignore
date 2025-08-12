@@ -114,6 +114,7 @@ backend/data/*.db
 backend/data/*.db-*
 backend/logs/
 backend/tmp/
+backend/dist/
 
 # Frontend specific
 frontend/dist/

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx --require tsconfig-paths/register src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "./start.sh",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:clear": "tsx --require tsconfig-paths/register scripts/clear-db.ts"

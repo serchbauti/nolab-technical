@@ -1,19 +1,12 @@
 [build]
-  publish = "dist"
-  command = "npm install && npm run build"
-
-[context.production]
-  publish = "dist"
-  command = "npm install && npm run build"
-
-[context.deploy-preview]
+  base = "frontend"
   publish = "dist"
   command = "npm install && npm run build"
 
 [build.environment]
   VITE_API_URL = "https://nolab-technical.onrender.com"
 
-# Redirects para SPA - Solución más directa
+# Redirects para SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"

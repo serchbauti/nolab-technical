@@ -6,7 +6,7 @@
     "dev": "tsx --require tsconfig-paths/register src/server.ts",
     "build": "tsc",
     "start": "./start.sh",
-    "start:low-memory": "node --max-old-space-size=256 dist/server.js",
+    "start:low-memory": "node --max-old-space-size=256 dist/server-prod.js",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:clear": "tsx --require tsconfig-paths/register scripts/clear-db.ts"
@@ -28,13 +28,13 @@
     "@types/cors": "^2.8.19",
     "@types/morgan": "^1.9.10",
     "@types/better-sqlite3": "^7.6.13",
-    "@types/luxon": "^3.7.1"
+    "@types/luxon": "^3.7.1",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "dotenv": "^17.2.1",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2"
   }

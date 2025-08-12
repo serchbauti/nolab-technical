@@ -22,4 +22,4 @@ fi
 
 # Iniciar la aplicación
 echo "🌐 Iniciando servidor en puerto $PORT..."
-node dist/server.js
+node dist/server-prod.js

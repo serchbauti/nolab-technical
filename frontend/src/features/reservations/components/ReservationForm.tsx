@@ -20,7 +20,7 @@ const TZ_OPTIONS: TZType[] = ['America/New_York','Asia/Tokyo','America/Mexico_Ci
 export default function ReservationForm({ onConflict }: Props) {
   const { createMutation } = useReservations();
 
-  const form = useForm<ReservationFormValues>({
+  const form = useForm<any>({
     resolver: zodResolver(ReservationFormSchema),
     defaultValues: {
       priority: 'normal',

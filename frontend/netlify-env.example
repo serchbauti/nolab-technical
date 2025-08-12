@@ -1,0 +1,7 @@
+# Variables de entorno para Netlify
+# Copia este archivo y renómbralo a .env.production
+# O configúralas directamente en el dashboard de Netlify
+
+VITE_API_URL=https://tu-backend.onrender.com
+VITE_APP_TITLE=Sistema de Reservas Nolab
+VITE_APP_VERSION=1.0.0

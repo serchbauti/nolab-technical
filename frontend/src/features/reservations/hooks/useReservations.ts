@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { api, type CreateReservationDTO, type ReservationDTO } from '../../../lib/api';
+import { api, type CreateReservationDTO } from '../../../lib/api';
 
 export function useReservations() {
   const qc = useQueryClient();

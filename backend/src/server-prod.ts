@@ -16,7 +16,7 @@ app.use(express.json({ limit: '100kb' }));
 app.use(morgan(config.isProduction ? 'combined' : 'dev'));
 
 app.get('/health', (_req, res) => res.json({ ok: true }));
-app.use('/reservations', reservationsRouter);
+app.use('/', reservationsRouter);
 app.use(notFound);
 app.use(errorHandler);
 

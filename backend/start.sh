@@ -3,6 +3,9 @@
 # Script de inicio para producción
 echo "🚀 Iniciando Sistema de Reservas Nolab..."
 
+# Configurar Node.js para usar menos memoria
+export NODE_OPTIONS="--max-old-space-size=256"
+
 # Verificar que la base de datos existe
 if [ ! -f "data/app.db" ]; then
     echo "📊 Creando base de datos SQLite..."
@@ -19,4 +22,4 @@ fi
 
 # Iniciar la aplicación
 echo "🌐 Iniciando servidor en puerto $PORT..."
-npm start
+node dist/server.js

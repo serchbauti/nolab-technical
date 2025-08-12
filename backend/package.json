@@ -6,6 +6,7 @@
     "dev": "tsx --require tsconfig-paths/register src/server.ts",
     "build": "tsc",
     "start": "./start.sh",
+    "start:low-memory": "node --max-old-space-size=256 dist/server.js",
     "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:clear": "tsx --require tsconfig-paths/register scripts/clear-db.ts"

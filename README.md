@@ -223,6 +223,79 @@ npm run dev
 3. **Verificar disponibilidad** de recursos
 4. **Auditar reasignaciones** automáticas
 
+## 🚀 Despliegue en Producción
+
+### **Backend - Render**
+
+El backend está desplegado en [Render](https://render.com) con las siguientes características:
+
+#### **Configuración del Servicio**
+- **Runtime**: Node.js 22.16.0
+- **Plan**: Free (con limitaciones de memoria)
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `./start.sh`
+- **Health Check**: `/health`
+
+#### **Variables de Entorno**
+```bash
+NODE_ENV=production
+PORT=10000
+CORS_ORIGIN=*
+LOG_LEVEL=info
+```
+
+#### **URL de Producción**
+- **API**: [https://nolab-technical.onrender.com](https://nolab-technical.onrender.com)
+- **Health Check**: [https://nolab-technical.onrender.com/health](https://nolab-technical.onrender.com/health)
+
+#### **Características del Despliegue**
+- ✅ **Base de datos SQLite** persistente
+- ✅ **CORS configurado** para permitir peticiones desde Netlify
+- ✅ **Build automático** en cada push a GitHub
+- ✅ **Logs públicos** para monitoreo
+- ✅ **Restart automático** en caso de fallo
+
+### **Frontend - Netlify**
+
+El frontend está desplegado en [Netlify](https://netlify.com) con las siguientes características:
+
+#### **Configuración del Build**
+- **Base Directory**: `/frontend`
+- **Build Command**: `npm install && npm run build`
+- **Publish Directory**: `dist`
+- **Deploy automático** en cada push a GitHub
+
+#### **Variables de Entorno**
+```bash
+VITE_API_URL=https://nolab-technical.onrender.com
+VITE_APP_TITLE=Sistema de Reservas Nolab
+VITE_APP_VERSION=1.0.0
+```
+
+#### **URL de Producción**
+- **Frontend**: [https://nolab-technical.netlify.app](https://nolab-technical.netlify.app)
+
+#### **Características del Despliegue**
+- ✅ **SPA (Single Page Application)** con routing configurado
+- ✅ **Redirects automáticos** para todas las rutas
+- ✅ **Headers de seguridad** configurados
+- ✅ **Build optimizado** con Terser
+- ✅ **Assets comprimidos** y minificados
+
+### **Configuración de CORS**
+
+El backend está configurado para permitir peticiones desde:
+- `http://localhost:3000` (desarrollo local)
+- `https://nolab-technical.onrender.com` (backend)
+- `https://*.netlify.app` (cualquier subdominio de Netlify)
+- `https://*.vercel.app` (cualquier subdominio de Vercel)
+
+### **Monitoreo y Logs**
+
+- **Backend**: Logs disponibles en el dashboard de Render
+- **Frontend**: Logs de build disponibles en Netlify
+- **Health Check**: Endpoint `/health` para verificar estado del backend
+
 ## 🔮 Mejoras Futuras
 
 ### **Funcionalidades Adicionales**

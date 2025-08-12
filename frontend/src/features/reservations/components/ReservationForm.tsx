@@ -38,8 +38,8 @@ export default function ReservationForm({ onConflict }: Props) {
         throw { status: 400, body: { message: 'Falta fecha/hora de inicio o fin' } } as HttpError;
       }
 
-      // Los campos datetime-local se interpretan en la zona horaria seleccionada
-      // Los convertimos a UTC literal usando la función correcta
+      // The datetime-local fields are interpreted in the selected timezone
+      // We convert them to UTC literal using the correct function
       const startISO = localToUTCLiteral(values.startTime, values.timezone);
       const endISO = localToUTCLiteral(values.endTime, values.timezone);
 

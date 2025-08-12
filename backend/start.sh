@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# Script de inicio para producción
-echo "🚀 Iniciando Sistema de Reservas Nolab..."
+# Production startup script
+echo "🚀 Starting Nolab Reservations System..."
 
-# Configurar Node.js para usar menos memoria
+# Configure Node.js to use less memory
 export NODE_OPTIONS="--max-old-space-size=256"
 
-# Verificar que la base de datos existe
+# Verify that the database exists
 if [ ! -f "data/app.db" ]; then
-    echo "📊 Creando base de datos SQLite..."
+    echo "📊 Creating SQLite database..."
     mkdir -p data
     touch data/app.db
-    echo "✅ Base de datos creada"
+    echo "✅ Database created"
 fi
 
-# Verificar que el build existe
+# Verify that the build exists
 if [ ! -d "dist" ]; then
-    echo "🔨 Compilando proyecto..."
+    echo "🔨 Compiling project..."
     npm run build
 fi
 
-# Iniciar la aplicación
-echo "🌐 Iniciando servidor en puerto $PORT..."
+# Start the application
+echo "🌐 Starting server on port $PORT..."
 node dist/server-prod.js

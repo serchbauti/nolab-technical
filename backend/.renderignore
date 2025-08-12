@@ -1,4 +1,4 @@
-# Archivos de desarrollo
+# Development files
 .env
 .env.local
 .env.development
@@ -8,26 +8,26 @@
 *.log
 logs/
 
-# Archivos temporales
+# Temporary files
 tmp/
 temp/
 
-# Archivos de IDE
+# IDE files
 .vscode/
 .idea/
 
-# Archivos del sistema
+# System files
 .DS_Store
 Thumbs.db
 
-# Archivos de Git
+# Git files
 .git/
 .gitignore
 
-# Archivos de documentación
+# Documentation files
 README.md
 *.md
 
-# Archivos de configuración local
+# Local configuration files
 tsconfig.json
 tsconfig-paths/

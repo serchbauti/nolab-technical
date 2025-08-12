@@ -1,5 +1,5 @@
-// Archivo de entrada para producción
-// Importa directamente sin usar paths @/*
+// Production entry file
+// Import directly without using @/* paths
 
 import express from 'express';
 import cors from 'cors';

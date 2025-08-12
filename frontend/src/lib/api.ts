@@ -3,7 +3,7 @@ export type HttpError = {
     body?: any;
   };
   
-  // Configuración de la API según el entorno
+  // API configuration based on environment
   const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
   
   export const API_ENDPOINTS = {

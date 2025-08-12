@@ -8,20 +8,20 @@ import { notFound } from '@/middlewares/notFound';
 
 const app = express();
 
-// Configuración de CORS para permitir múltiples orígenes - V2
+// CORS configuration to allow multiple origins
 const allowedOrigins = [
-  'http://localhost:3000', // Desarrollo local
+  'http://localhost:3000', // Local development
   'https://nolab-technical.onrender.com', // Backend
-  'https://*.netlify.app', // Cualquier subdominio de Netlify
-  'https://*.vercel.app', // Cualquier subdominio de Vercel
+  'https://*.netlify.app', // Any Netlify subdomain
+  'https://*.vercel.app', // Any Vercel subdomain
 ];
 
 app.use(cors({ 
   origin: function (origin, callback) {
-    // Permitir requests sin origin (como Postman, curl)
+    // Allow requests without origin (like Postman, curl)
     if (!origin) return callback(null, true);
     
-    // Verificar si el origin está permitido
+    // Check if the origin is allowed
     const isAllowed = allowedOrigins.some(allowed => {
       if (allowed.includes('*')) {
         return origin.endsWith(allowed.replace('*.', ''));

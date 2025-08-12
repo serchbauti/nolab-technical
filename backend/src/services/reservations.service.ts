@@ -48,7 +48,7 @@ export async function createReservation(input: CreateInput) {
   const conflicts = getConflicts(startUtc, endUtc, input.resources) as Array<any>;
   const hasHighConflict = conflicts.some(r => r.priority === 'high');
 
-  // Validar conflictos de recursos por separado
+  // Validate resource conflicts separately
   if (conflicts.length > 0) {
     const resourceConflicts = conflicts.filter(conflict => {
       // Check projector conflict
@@ -65,7 +65,7 @@ export async function createReservation(input: CreateInput) {
       return false;
     });
     
-    // Si hay conflictos de recursos, no permitir la reserva
+    // If there are resource conflicts, don't allow the reservation
     if (resourceConflicts.length > 0) {
       throw new BadRequestError('Resource conflict detected');
     }

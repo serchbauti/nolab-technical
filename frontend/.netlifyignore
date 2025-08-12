@@ -1,14 +1,14 @@
-# Archivos de desarrollo
+# Development files
 src/
 public/
 node_modules/
 .env*
 *.log
 
-# Archivos de configuración
+# Configuration files
 tsconfig.json
 vite.config.ts
 package-lock.json
 
-# Solo incluir el directorio dist
+# Only include the dist directory
 !dist/

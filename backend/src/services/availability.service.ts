@@ -20,8 +20,8 @@ export function getConflicts(startUtc: number, endUtc: number, resources?: { pro
   const params = [endUtc, startUtc];
   const temporalConflicts = db.prepare(query).all(...params) as Array<any>;
   
-  // IMPORTANTE: Siempre retornar conflictos temporales para lógica de prioridad
-  // Los recursos se validan por separado en createReservation
+  // IMPORTANT: Always return temporal conflicts for priority logic
+  // Resources are validated separately in createReservation
   return temporalConflicts;
 }
 
